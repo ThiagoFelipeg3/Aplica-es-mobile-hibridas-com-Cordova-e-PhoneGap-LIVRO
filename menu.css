@@ -1,0 +1,113 @@
+/*********************************************
+* Com	esse	código,	se	uma	certa	opção
+* estiver	marcada,	a	foto	da outra
+* opção	 ficará	escondida.
+*********************************************/
+#opcao-bolos:checked ~ #menu-bebidas,
+#opcao-bebidas:checked ~ #menu-bolos {
+	display : none;
+}
+/*****************************************
+* Escondendo os input radio e adequando a 
+* imagens para os tamanhos da tela.
+*****************************************/
+input[type=radio]{
+	display :none;
+}
+.menu{
+	width: 100%;
+	margin-bottom: 100px;
+}
+body{
+	background: #3D1A11;
+	font-family: sans-serif;
+	margin: 0;
+	text-align: center;
+}
+/*******************************************
+* Nosso	 próximo	 passo	 é	 deixar	 os	 
+* labels	 com	 cara	 de	 botões,
+* colocar	uns	ícones	bonitos	e	acertas	
+* outras	coisas	decorativas:
+*******************************************/
+label{
+	background: center 0.5em no-repeat #563429;
+	background-size: 4em;
+	color: white;
+	display: block;
+	font-size: 75%;
+	padding: 4em 0 1em;
+	text-transform: uppercase;
+}
+	label[for=opcao-bolos]{
+		background-image: url(imagens/icone-bolos.svg);
+
+	}
+	label[for=opcao-bebidas]{
+		background-image: url(imagens/icone-bebidas.svg);
+	}
+	:checked + label{
+		background-color: #E4876D;
+
+	}
+/***************************************
+* Por	 fim,	 podemos	 posicionar	 
+* os	 botões	 embaixo	 na	 tela
+* fixamente	e	lado	a	lado:
+****************************************/
+label{
+	width: 50%;
+	bottom: 0;
+	position: fixed;
+	z-index: 1;
+	
+}
+	label[for=opcao-bolos]{
+		left:0;
+	}
+	label[for=opcao-bebidas]{
+		right: 0;
+	}
+
+/*********************************************************
+* O deslocamento em si é feito com CSS transform, fazendo
+* em translateX para deslocar horizontalmente.
+* Vamos posicionar fora da tela a imegens não seleconada,
+* para depois animá-la para dentro quando selecionar.
+* Para evitar um scroll lateral, precisamos de um 
+* overflow-x:hidden
+* Dependendo do navegador, pode ser necessário ainda 
+* colocar alguns prefixos nas propriedades.
+* -webkit-transform:
+* -webkit-transition:
+********************************************************/
+html,body{
+	overflow-x: hidden;
+	width: 100%;
+}
+.container-menus{
+	transform: translateX(0);
+	transition: transform 300ms ease;
+	width: 200%;
+}
+.container-menus .menu{
+	float: left;
+	width: 50%;
+}
+
+#opcao-bebidas:checked ~ .container-menus{
+	transform: translateX(-50%);
+}	
+/******************************************
+* Pode ser feito assim tbm
+*#opcao-bolos:checked ~ .container-menus{
+	transform: translateX(0);
+	transition: transform 300ms ease;
+	width: 200%;
+}
+#opcao-bebidas:checked ~ .container-menus{
+	transform: translateX(-50%);
+	transition: transform 300ms ease;
+	width: 200%;
+}
+******************************************/

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+		xmlns:gap="http://phonegap.com/ns/1.0"
+		id="org.thiagofelipe.cenourapp"
+		version="1.0.0">
+
+		<name>
+			Só de Cenoura
+		</name>
+
+		<description>
+			Menu do restaurante Só de Cenoura
+		</description>
+
+		<author href="http://thiagofelipe.org"
+				email="thiagof.g3@gmail.com">
+				Thiago Felipe
+		</author>
+
+		<preference name="orientation" value="portrait"/>
+
+		<preference name="fullscreen" value="true"/>
+
+		<preference name="permissions" value="none"/>
+
+		<preference name="android-minSdVersion" value="16"/>
+
+		<gap:platform name="android" />
+
+		<icon src="icon.png"/>
+		<gap:splach src="splash.png"/>
+</widget>
