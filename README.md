@@ -1,4 +1,4 @@
-# App-Hibrido-com-Cordova
+# Aplicacoes-mobile-hibridas-com-Cordova-e-PhoneGap-LIVRO
  Exemplo de aplicação mobile com Cordova  e PhoneGap
  
 # Apache Cordova
